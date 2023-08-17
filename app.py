@@ -6,7 +6,8 @@
 
 from flask import Flask ,render_template,request
 import openai
-openai.api_key="openai_api_key"
+import os
+openai.api_key=os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 @app.route("/",methods=["GET","POST"])
 def index():
